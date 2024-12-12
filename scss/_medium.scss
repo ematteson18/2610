@@ -1,0 +1,105 @@
+#headerWrapper {
+    header {
+        padding: 2rem $gutter;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+} // end header styles
+
+/* NAVIGATION STUFF GOES HERE */
+
+#parkingLot {
+    display: grid;
+    grid-template-columns: 1fr; // Single column for medium screens
+    gap: 20px; // Add spacing between cards
+
+    section {
+        display: grid;
+        grid-template-areas:
+            "photo name"
+            "photo address"
+            "photo phone"; // Align phone button below address
+        grid-template-columns: 40% 60%; // Allocate space between image and text
+        grid-template-rows: auto auto auto;
+        border: 1px solid #ccc; // Add card border
+        border-radius: 8px; // Rounded corners
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Light shadow for depth
+        padding: 10px;
+    }
+
+    img {
+        grid-area: photo;
+        width: 100%;
+        height: auto;
+        border-radius: 8px 0 0 8px; // Rounded corners for the image
+    }
+
+    h2 {
+        grid-area: name;
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 0 10px;
+    }
+
+    address {
+        grid-area: address;
+        font-style: normal;
+        color: #555;
+        padding: 0 10px;
+    }
+
+    a {
+        grid-area: phone;
+        text-decoration: none;
+        background-color: rgb(255, 0, 93); // Button color
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        display: inline-block;
+        border-radius: 5px;
+        margin: 10px 10px 0;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: rgb(255, 0, 93); // Darker button color on hover
+        }
+    }
+}
+
+div.allcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gutter;
+
+    section {
+        flex-basis: calc(50% - ($gutter / 2)); // Two-column layout
+    }
+    ul {
+        margin-bottom: 0.5rem; // Add space between list items
+      display: block;
+      text-align: left;
+      padding: 10px;
+      }
+}
+
+section.contact {
+    background-color: $primaryColor
+}
+
+.Clients h2{
+    width: 100%; // Full width for medium screens
+}
+
+.Clients img {
+    max-width: 100px;
+    margin: 0.5rem; // Adds space between logos
+
+
+}
+
+.footer {
+    display: flex;
+}

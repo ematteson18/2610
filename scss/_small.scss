@@ -1,0 +1,509 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*  Apply a natural box layout model to all elements  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// end all elements
+
+
+/* --------------------------- BODY --------------------------- */
+body {
+    font-family: $defaultFont;
+    font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {
+    background-color: white;
+}
+
+
+header {
+    display: grid;
+    grid-template-columns: 60px auto 40px;
+    column-gap: $gutter;
+    align-items: center; //vertically
+    padding: .5rem 2rem;
+
+    span {
+        font-size: 1.5rem;
+        font-weight: $normalWeight;
+        color: rgb(163, 63, 89);
+        text-align: bottom;
+        padding-top: 20px;
+    }
+}
+
+// end header
+
+
+
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+#hamburgerBtn {
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none; 
+    border-radius: 5px;
+    font-size: 2rem;
+    color: #333;
+
+    &:before {
+        content: "\2630"; // Unicode for hamburger icon
+        display: block;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1); // Subtle hover effect
+    }
+}
+
+
+//end button
+
+nav {
+    background-color: #f7f7f7;
+    width: 250px; // Wider for better visibility
+    position: fixed; // Ensure it stays in place
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+
+    font-size: 1.2rem;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            a {
+                display: block;
+                padding: 1rem;
+                text-align: right;
+                text-decoration: none;
+                font-size: 1.2rem;
+                color: #123456; // Adjust to match your design
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        li.active a {
+            color: #ff0061; // Active state
+        }
+    }
+}
+
+.moveOver #hamburgerBtn::before {
+    content: "\2715";
+}
+
+.moveOver>.content {
+    transform: translateX(-180px); //moves everything sideways
+    transition: transform 500ms ease; //animates slide
+}
+
+.content {
+    padding: 1rem; // Space around edges
+    margin: 0 auto;
+    max-width: 90%; // Ensure content doesn't overflow
+}
+
+.overlay {
+    position: absolute;
+    font-size: 1.5rem;
+    margin: 0;
+    z-index: 9999;
+    bottom: 0;
+    padding: 1rem;
+    width: 100%;
+    background:  rgba(255,255,255,.8);
+    border-radius: 5px;
+    padding: 10px;
+
+    
+}
+
+#pageWrapper {
+    position: relative;
+    overflow-x: hidden;
+}
+
+#contactWrapper {
+    background-color: $primaryColor
+
+}
+section.contact {
+    background-color: $primaryColor;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+/* --------------------------- MAIN --------------------------- */
+main {
+    h1 {
+padding-top: 30px;
+        font-size: 3rem;
+        color: #071a2e;
+        font-weight: $normalWeight;
+        text-align: center;
+        margin: 0;
+
+    }
+
+    p {
+
+        color: #333;
+        margin: 0;
+        font-weight: 700;
+
+
+    }
+
+    h3 {
+        text-align: center;
+        color: #940e0e;
+        font-weight: $lightWeight;
+    }
+
+    .hero {
+        position: relative;
+        width: 100%;
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        img {
+            width: 100%;
+            /* Adjust as needed */
+            height: auto;
+        }
+
+    }
+
+    //end hero
+
+
+}
+
+div.allcards section {
+    margin: 14px auto; // Center cards
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Adds depth
+
+    border-radius: 10px;
+    background-color: white; // Ensure a consistent background 
+    max-width: 300px; // Set a max-width for uniformity
+
+}
+
+
+
+div.allcards h2 {
+    background-color: #123456; // Match the image theme
+    color: white;
+    padding: 0.5rem; // Add padding for better spacing
+    border-radius: 10px 10px 0 0; // Rounded corners at the top
+
+}
+
+div.allcards img {
+    margin: 0;
+    width: 100%; // Ensure images are responsive
+    height: auto;
+}
+
+img.e2e {
+    padding: 0;
+
+
+}
+
+
+
+
+
+
+
+//end section
+
+
+// end main
+
+
+
+h2 {
+text-align: center;
+font-size: 2rem;
+margin: 0;
+}
+
+h1 {
+    font-size: 3rem; // Ensure it's prominent
+    margin: 2rem 0;
+    color: #123456;
+}
+
+h3 {
+    font-size: 0.9rem; // Slightly smaller
+    color: #940e0e; // Use the red color in the reference
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+div.allcards ul {
+    list-style: disc;
+    margin: 1rem;
+    padding: 10px;
+    display: block;
+    ul {
+
+
+      text-align: left;
+      padding: 10px;
+      }
+}
+header img {
+    width: 100%;
+    /* Adjust as needed */
+    height: auto;
+}
+
+address {
+    grid-area: address;
+}
+
+a {
+    grid-area: phone;
+
+
+}
+
+/* Section styling */
+.design-section {
+    width: 100%; // Full width for mobile
+    margin:  0;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        text-align: center;
+        background-color: #b13441;
+        color: white;
+
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+
+    ul {
+        list-style: disc;
+
+        padding-left: 1rem;
+    }
+
+
+}
+
+
+
+
+
+
+
+/* --------------------------- FOOTER --------------------------- */
+
+
+
+section.Clients {
+    display: flex;
+    flex-wrap: wrap; // Allow logos to wrap to the next line
+    justify-content: center; // Center-align logos
+    gap: 1rem; // Add space between logos
+
+    img {
+        border: none;
+        max-width: 100px; // Limit width to 100px
+        height: auto; // Maintain aspect ratio
+        margin: 0.5rem; // Adds space between logos
+    }
+}
+
+// end footer wrapper
+
+footer {
+    background-color: $primaryColor; // Match your theme
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+
+    bottom: 0;
+    width: 100%;
+
+
+
+}
+
+
+// end footer
+
+
+/* --------------------------- NOTES --------------------------- */
+
+//notes for images, 8 total
+//SMALL PIC 400x?? px
+//MEDIUM PIC 250x?? px
+//LARGE PIC 250x?? px
+//save as webp, 55% quality
+
+//international destinations
+
+//notes for cards - SMALL
+//Name
+//image
+//address
+//phone number button
+
+//notes for cards - MEDIUM (change using CSS only)
+//image on left, other info stacked to the right
+
+//cards - LARGE (change using CSS only)
+
+//use modules to import json data
+
+//off canvas nav 
+//const hb = document.querySelector('#hamburgerBtn');
+//const pw = document.querySelector('#pageWrapper');
+//hb.addEventListener('click', () => {
+//pw.classList.toggle('moveOver'); });
+
+//import data for the eight cards
+//import { hotels } from '../data/hoteldata.js';
+
+//grab reference to HTML ID where you are going to attach the cards as you build them
+//const hotelCards=document.querySelector('#cards')
+
+//loop through all card items, creating new elements then assigning data to them from the JSON data file
+//hotels.forEach(hotel => {
+//const mySection = document.createElement('section')
+
+//const theImage = document.createElement("img")
+//theImage.src = `images/${hotel.photo}`
+//theImage alt = hotel.name
+
+//const theName = document.createElement("h2")
+//theName.textContent = hotel.name
+
+//const theAddress = document.createElement("address");
+//theAddress.innerHTML = `${hotel.address[0]}<br>${hotel.address[1]}`;
+
+//const thePhone = document.createElement("a");
+//thePhone.textContent = hotel.phone
+//thePhone.href = `tel:${hotel.phone}`
+
+//Attach pieces together, order does not matter because we are using CSS grids to modify it
+//mySection.appendChild(theImage)
+//mySection.appendChild(theName)
+//mySection.appendChild(theAddress)
+//mySection.appendChild(thePhone)
+
+//Attach cards to html and perform loop again
+//hotelCards.appendChild(mySection)
+
+
+//other info - to create two lines for address, use comma
+//"name":"San Fransisco",
+//"photo":"#.webp",
+//"address":["4905 W Wiley Post Way","San Fransisco, CA 34116'],
+//"phone":"1-202-555-4444"
+
+
+//html (order does not matter)
+//<section>
+//<img src="images/#.webp" alt="">
+//<h2>Insert Here</h2>
+//<address>555 not gonna happen.<br>Roanoke, VA 88765</address>
+//<a href="tel:1-307-886-1234">1-307-866-1234</a>
+//</section>
+
+/* --------------------------- Grid Template Area Small
+grid-template-areas:
+"name"
+"photo"
+"address"
+"phone";
+}
+
+<section>
+    <img src="images/serenade.webp" alt="Roanoke">
+    <h2>Roanoke</h2>
+    <address>555 not gonna happen.<br>Roanoke, VA 88765</address>
+    <a href="tel:1-307-886-1234">1-307-866-1234</a>
+    </section>
+--------------------------- */
+
+
+
+
+/* --------------------------- Grid  Area Small
+img {grid-area:photo;}
+h2{grid-area:name;}
+address{grid-area:address;}
+a{grid-area: phone;}
+--------------------------- */
+
+
+
+
+/* --------------------------- Grid Template Area Medium
+section {
+grid-template-areas:
+    "photo name"
+    "photo address"
+    "phone phone";
+    grid-template-columns:250px auto;
+    column-gap:8px;
+}
+--------------------------- */
+
+/* --------------------------- Grid Template Area (CSS) Large
+.parent {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+--------------------------- */

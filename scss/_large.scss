@@ -1,0 +1,199 @@
+header, nav, main {
+    max-width: 960px; // Center content for large screens
+    margin: auto;
+}
+
+/* NAVIGATION */
+#hamburgerBtn {
+    display: none; // Hide hamburger for larger screens
+}
+
+.moveOver > content {
+    transform: translateX(0);
+}
+
+nav {
+    background-color: transparent;
+    position: static;
+    transform: translateX(0);
+    width: auto;
+}
+
+ul {
+    display: flex;
+    margin-left: $gutter;
+    // border-left: 1px solid rgba(0,0,0,0.2);
+}
+
+ul li a {
+    padding: .6rem 1.5rem;
+    border: none;
+    // border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+#navWrapper {
+    background-color: #f7f7f7; // Light background for navigation
+}
+
+/* PARKING LOT (Grid Layout) */
+#parkingLot {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Two columns for large screens
+    gap: 30px; // Space between cards
+    max-width: 1200px; // Center content
+    margin: auto;
+    padding-bottom: 20px;
+
+    section {
+        display: grid;
+        grid-template-areas:
+            "photo name"
+            "photo address"
+            "photo phone";
+        grid-template-columns: 40% 60%;
+        grid-template-rows: auto auto auto;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Slightly larger shadow for a more elevated feel
+        padding: 15px;
+        background-color: #fff;
+    }
+
+    img {
+        grid-area: photo;
+        width: 100%;
+        height: auto;
+    }
+
+    h2 {
+        grid-area: name;
+        margin: 0;
+        font-size: 1.1rem; // Larger font size for better readability
+        font-weight: bold;
+        padding: 0 15px;
+    }
+
+    address {
+        grid-area: address;
+        font-style: normal;
+        color: #555;
+        padding: 0 15px;
+        font-size: 1rem; // Slightly larger font for better legibility
+    }
+
+    a {
+        grid-area: phone;
+        text-decoration: none;
+        background-color: #f4a261;
+        color: white;
+        text-align: center;
+        display: inline-block;
+        margin: 10px 15px 0;
+        transition: background-color 0.3s;
+        font-size: 1rem; // Larger clickable text
+        padding: 8px 15px;
+        border-radius: 5px; // Rounded corners for button
+
+        &:hover {
+            background-color: #e76f51; // Darken on hover
+        }
+    }
+}
+
+/* ALL CARDS SECTION */
+div.allcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gutter;
+
+    section {
+        flex-basis: calc(25% - (($gutter * 3) / 3)); // Four columns for large screens
+
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+
+    img {
+        width: 100%;
+        height: auto;
+
+    }
+
+
+    ul {
+        margin-bottom: 0.5rem; // Add space between list items
+      display: block;
+      padding: 10px;
+      }
+}
+
+/* CONTACT SECTION */
+#ContactWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Space between contact sections */
+  padding: 20px; /* Padding around the contact wrapper */
+  background-color: #f7f7f7; /* Light background color */
+}
+
+.contact {
+  background-color: #fff; /* White background for each contact section */
+  padding: 20px; /* Padding inside each contact section */
+  border: 1px solid #ccc; /* Border around each contact section */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for elevation */
+  text-align: center; /* Center-align text */
+}
+
+.contact a {
+  display: block; /* Make the phone number a block element */
+  margin-bottom: 10px; /* Space below the phone number */
+  font-size: 1.2rem; /* Larger font size for the phone number */
+  color: #f4a261; /* Color for the phone number */
+  text-decoration: none; /* Remove underline */
+}
+
+.contact h3 {
+  margin: 10px 0; /* Space above and below the heading */
+  font-size: 1.5rem; /* Larger font size for the heading */
+  color: #333; /* Dark color for the heading */
+}
+
+.contact p {
+  margin: 5px 0; /* Space above and below each paragraph */
+  font-size: 1rem; /* Font size for the address */
+  color: #555; /* Color for the address */
+}
+
+/* FOOTER STYLES */
+footer div {
+    display: grid;
+    grid-template-columns: auto auto auto; // Three-column layout for footer on large screens
+    gap: 20px;
+}
+
+/* BUTTON */
+#myButton {
+    display: none; // Hide any additional buttons for large screens
+}
+
+/* NAVIGATION MENU */
+ul.menuLinks li a {
+    padding: 0.4rem 1rem;
+}
+
+ul.menuLinks,
+ul.menuLinks.open {
+    display: flex;
+    justify-content: flex-end; // Align links to the right for large screens
+}
+
+ul.menuLinks a:hover {
+    background-color: yellow; // Highlight on hover
+}
+
